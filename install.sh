@@ -60,9 +60,9 @@ install_oh_my_zsh() {
     fi
 
     println "\nCloning Oh My Zsh"
-    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
     println "\nCloning Powerlevel10k"
-    git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 }
 
 install_plug_vim() {
@@ -78,6 +78,16 @@ install_plug_vim() {
         && nvim +PlugInstall +qa
 }
 
+install_plug_tmux() {
+    if [ -d ~/.tmux ]; then
+        println "Tmux Plugin Manager already installed"
+        return 0
+    fi
+    println "Installing  Tmux Plugin Manager"
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+    
+}
 change_shell() {
     if [[ $SHELL != "/bin/zsh" ]]; then
         println "Changing default shell to zsh..."
@@ -91,6 +101,7 @@ main() {
     link_dotfiles
     install_plug_vim
     change_shell 
+    install_plug_tmux
 }
 
 main

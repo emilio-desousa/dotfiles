@@ -5,8 +5,6 @@ if [[ ! -z $TMUX && -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 if [ "$TMUX" = "" ]; then tmux; fi
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PS1='$(kube_ps1)'$PS1
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -18,10 +16,10 @@ ZSH_TMUX_AUTOCONNECT=false
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-plugins=(tmux poetry git virtualenv kubectl)
+plugins=(tmux git virtualenv )
 
 source $ZSH/oh-my-zsh.sh
-
+export TERM=xterm
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -31,7 +29,13 @@ if [ -f '/Users/emiliodesousa/Downloads/google-cloud-sdk/path.zsh.inc' ]; then .
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/emiliodesousa/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/emiliodesousa/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# Load fzf
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/emiliodesousa/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
