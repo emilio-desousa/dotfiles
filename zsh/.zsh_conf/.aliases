@@ -1,0 +1,6 @@
+alias dm-disk='docker run --rm -it -v /:/docker alpine:edge $@'
+alias wifi-pwd='security find-generic-password -ga Livebox-A030 | grep “password:”'
+alias vim="nvim"
+alias vi="nvim"
+alias proj3="cd /Users/emiliodesousa/Documents/Yotta_Academy/Projets/ml_prod/chaos-6/"
+
