@@ -47,7 +47,7 @@ nmap <C-p> :Files<CR>
 nmap <leader>gh :diffget //3<CR>
 nmap <leader>gu :diffget //2<CR>
 nmap <leader>gs :G<CR>
-"
+
 "" NERDCommenter
 "nmap <C-p> <Plug>NERDCommenterToggle
 "vmap <C-p> <Plug>NERDCommenterToggle<CR>gv
