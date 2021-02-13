@@ -12,13 +12,18 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
+set signcolumn=yes
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'tpope/vim-surround'
 Plug 'preservim/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'

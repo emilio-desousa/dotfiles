@@ -7,7 +7,6 @@ fi
 if [ "$TMUX" = "" ]; then tmux; fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
 [[ -f ~/.zsh_conf/.aliases ]] && \. ~/.zsh_conf/.aliases
 [[ -f ~/.zsh_conf/.env ]] && \. ~/.zsh_conf/.env
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -16,7 +15,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-plugins=(tmux git virtualenv )
+plugins=(tmux vi-mode git virtualenv )
 
 source $ZSH/oh-my-zsh.sh
 export TERM=xterm
@@ -34,7 +33,9 @@ if [ -f '/Users/emiliodesousa/Downloads/google-cloud-sdk/completion.zsh.inc' ]; 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
