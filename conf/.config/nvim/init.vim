@@ -13,6 +13,7 @@ set expandtab
 set autoindent
 set fileformat=unix
 set signcolumn=yes
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
 call plug#begin('~/.vim/plugged')
 
@@ -30,10 +31,17 @@ Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
+let g:ale_sign_column_always = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+    \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \ 'rust': ['rustfmt'],
+\}
 colorscheme gruvbox
 
 let g:airline_theme='gruvbox'
@@ -51,7 +59,7 @@ nmap <leader>gs :G<CR>
 "" NERDCommenter
 "nmap <C-p> <Plug>NERDCommenterToggle
 "vmap <C-p> <Plug>NERDCommenterToggle<CR>gv
-
+inoremap kj <Esc>
 " NERDTree
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
@@ -65,3 +73,4 @@ nmap <leader>2 :tabnext<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+let g:rustfmt_autosave = 1

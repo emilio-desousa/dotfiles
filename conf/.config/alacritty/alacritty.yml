@@ -31,18 +31,18 @@ font:
   # UI for powerline & tmux bottom bar.
   normal:
     # Font name
-    family: "MesloLGS NF"
+    family: "JetBrains Mono"
     # Font face
     style: Regular
 
   # Bold font face
   bold:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono"
     style: Bold
 
   # Italic font face
   italic:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono"
     style: Italic
 
   # Bold italic font face
@@ -50,11 +50,11 @@ font:
   # italic & it just works. You may specifiy the bold italic version if it exists
   # for your font
   bold_italic:
-    family: "MesloLGS NF"
+    family: "JetBrains Mono"
     style: Italic
 
   # Font size
-  size: 11.0 
+  size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing
