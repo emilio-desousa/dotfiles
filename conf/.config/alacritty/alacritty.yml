@@ -54,7 +54,7 @@ font:
     style: Italic
 
   # Font size
-  size: 11.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing
@@ -97,30 +97,68 @@ key_bindings:
   - { key: Key6, mods: Control, chars: "\x1e" }
   - { key: PageUp,   mods: Shift,   action: ScrollPageUp                 }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown               }
+    # Colors (Ayu Mirage)
 colors:
   # Default colors
   primary:
-    background: '#27292c'
-    foreground: '#d0d2d1'
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    bright_foreground: '0xe6efff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
 
   # Normal colors
   normal:
-    black:   '#35383b'
-    red:     '#b05655'
-    green:   '#769972'
-    yellow:  '#e1a574'
-    blue:    '#7693ac'
-    magenta: '#977ba0'
-    cyan:    '#749e99'
-    white:   '#848b92'
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 
   # Bright colors
   bright:
-    black:   '#484c52'
-    red:     '#d27c7b'
-    green:   '#dffebe'
-    yellow:  '#f0d189'
-    blue:    '#96b1c9'
-    magenta: '#bfa5c7'
-    cyan:    '#9fc9c3'
-    white:   '#fcf7e2'
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xe6efff'
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #indexed_colors:
+  #  - { index: 16, color: '0x000000' }

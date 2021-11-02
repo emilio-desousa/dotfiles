@@ -23,6 +23,7 @@
     "python.formatting.blackPath":"/usr/local/bin/black",
     "python.formatting.provider": "black",
     "python.sortImports.path": "/usr/local/bin/isort",
+    "coc.preferences.formatOnSaveFiletypes": ["python"],
     "git.addedSign.text": "▎",
     "git.changedSign.text": "▎",
     "git.removedSign.text": "▎",

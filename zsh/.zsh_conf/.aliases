@@ -1,6 +1,10 @@
 alias dm-disk='docker run --rm -it -v /:/docker alpine:edge $@'
-alias wifi-pwd='security find-generic-password -ga Livebox-A030 | grep “password:”'
+alias wifi-pwd='security find-generic-password -ga Sicara| grep “password:”'
 alias vim="nvim"
 alias vi="nvim"
 alias proj3="cd /Users/emiliodesousa/Documents/Yotta_Academy/Projets/ml_prod/chaos-6/"
+alias ssh_hawat_st="ssh -o logLevel=ERROR -L 8501:emilio:8501 emilio"
+alias g="git"
+alias tmux="TERM=screen-256color tmux -2"
+alias top="htop"
 
