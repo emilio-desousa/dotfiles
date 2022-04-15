@@ -8,7 +8,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 plugins=( git sudo zsh-z zsh-vi-mode zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -25,4 +24,6 @@ eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f ~/.zsh_conf/.aliases ]] && \. ~/.zsh_conf/.aliases
+[[ -f ~/.zsh_conf/.path ]] && \. ~/.zsh_conf/.path
 [[ -f ~/.zsh_conf/.env ]] && \. ~/.zsh_conf/.env
+source $ZSH/oh-my-zsh.sh
