@@ -6,6 +6,8 @@ env:
 window:
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
+  # opacity: 0.6
+
 
   # Startup Mode (changes require restart)
   startup_mode: Fullscreen
@@ -98,6 +100,7 @@ key_bindings:
   - { key: PageUp,   mods: Shift,   action: ScrollPageUp                 }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown               }
     # Colors (Ayu Mirage)
+
 colors:
   # Default colors
   primary:

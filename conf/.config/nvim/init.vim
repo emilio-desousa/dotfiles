@@ -1,9 +1,10 @@
 if exists('g:vscode')
     set encoding=utf-8
-    "call plug#begin('~/.vim/plugged')
-	"Plug 'asvetliakov/vim-easymotion'
-	"Plug 'tpope/vim-surround'
-    "call plug#end()
+    call plug#begin('~/.vim/plugged')
+    Plug 'asvetliakov/vim-easymotion'
+	Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    call plug#end()
 else
     call plug#begin('~/.vim/plugged')
     Plug 'michaeljsmith/vim-indent-object'
@@ -13,8 +14,8 @@ else
     Plug 'tpope/vim-fugitive'
 	Plug 'vim-scripts/ReplaceWithRegister'
 	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-commentary'
 	Plug 'preservim/vimux'
-	Plug 'preservim/nerdcommenter'
 	Plug 'morhetz/gruvbox'
 	Plug 'scrooloose/nerdtree'
 	Plug 'jiangmiao/auto-pairs'
@@ -22,12 +23,12 @@ else
 	Plug 'jpalardy/vim-slime'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'ayu-theme/ayu-vim'
-
+    Plug 'arcticicestudio/nord-vim'
     call plug#end()
 endif 
 
 if exists('g:vscode')
-	" VSCode extension"
+	set clipboard+=unnamedplus
 else
 	set encoding=utf-8
 	set number relativenumber
@@ -47,14 +48,15 @@ else
 	set signcolumn=yes
 
 
-	let ayucolor="mirage" " for mirage version of theme
-	colorscheme ayu
+    colorscheme nord    
+    hi Normal guibg=NONE ctermbg=NONE
+
 	" Vim-slime
 	let g:slime_target = "tmux"
 	let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 	let g:slime_python_ipython = 1
 
-	let g:airline_theme='gruvbox'
+	" let g:airline_theme='gruvbox'
 
 	" vim-isort
 	if (has("termguicolors"))
