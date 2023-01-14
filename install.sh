@@ -67,15 +67,13 @@ install_oh_my_zsh() {
 
 install_plug_vim() {
 
-    local PLUG_FILE="$HOME/.local/share/nvim/site/autoload/plug.vim"
-    if [[ -f $PLUG_FILE ]]; then
-	    println "\nPlug Vim is already installed"
+    local PACKER_FILE="~/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    if [[ -f $PACKER_FILE ]]; then
+	    println "\nPacker Vim is already installed"
         return 0
     fi
-
-    println "\nInstalling Plug Vim"
-    curl -fLo $PLUG_FILE --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-        && nvim +PlugInstall +qa
+	println "\nInstalling Packer"
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim $PACKER_FILE
 }
 
 install_plug_tmux() {
@@ -87,6 +85,10 @@ install_plug_tmux() {
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
     
+}
+install_kitty(){
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
 }
 change_shell() {
     if [[ $SHELL != "/bin/zsh" ]]; then
